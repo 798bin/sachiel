@@ -1,0 +1,38 @@
+{
+    "name": "sachiel",
+    "version": "",
+    "private": false,
+    "description": "",
+    "main": "server.js",
+    "scripts": {},
+    "dependencies": {
+        "express": "",
+        "mocha": "",
+        "underscore": "",
+        "async": "",
+        "connect": "",
+        "imagemagick": "",
+        "xmldom": "",
+        "mysql": "",
+        "consolidate": ""
+    },
+    "devDependencies": {
+        "grunt": "",
+        "grunt-contrib-jshint": "",
+        "grunt-contrib-uglify": "",
+        "grunt-contrib-less": "",
+        "grunt-contrib-watch": "",
+        "grunt-contrib-concat": "",
+        "grunt-contrib-clean": "",
+        "grunt-contrib-requirejs": "",
+        "grunt-manifest": "",
+        "grunt-contrib-cssmin": "",
+        "grunt-contrib-htmlmin": "",
+        "grunt-preprocess": "",
+        "grunt-env": ""
+    },
+    "repository": "",
+    "author": "judasnow@gmail.com",
+    "license": "MIT"
+}
+
