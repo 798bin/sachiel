@@ -9,7 +9,7 @@ module.exports = {
             host : '172.17.0.202',
             usr : 'test',
             pwd : 'test',
-            dbName: ""
+            dbName: ''
         }
     },
     'dev': {
@@ -19,7 +19,7 @@ module.exports = {
             host : '172.17.0.202',
             usr : 'test',
             pwd : 'test',
-            dbName: ""
+            dbName: ''
         }
     }
 }
