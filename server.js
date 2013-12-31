@@ -6,8 +6,6 @@ var express = require('express'),
 
 var app = express();
 
-app.set(dbConn, dbConn);
-
 require('./config/express')(app, config);
 require('./config/routes')(app, config);
 
