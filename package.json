@@ -14,7 +14,8 @@
         "imagemagick": "",
         "xmldom": "",
         "mysql": "",
-        "consolidate": ""
+        "consolidate": "",
+        "memcached": ""
     },
     "devDependencies": {
         "grunt": "",
