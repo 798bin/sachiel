@@ -404,3 +404,16 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+
+input, textarea {
+    outline: none;
+    resize: none;
+}
+
+ul , ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+

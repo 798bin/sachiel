@@ -1,5 +1,6 @@
 
-module.exports = function(dbConn) {
-    
+var BaseModel = function() {
+
 };
 
+module.exports = BaseModel;

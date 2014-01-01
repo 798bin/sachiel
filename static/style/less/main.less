@@ -8,29 +8,22 @@
     @color6: #9a9994;
 };
 
-input, textarea {
-    outline: none;
-    resize: none;
-}
-
-ul , ol {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
 body {
     background: #f9f9f9 url(/static/image/bg.jpg) repeat scroll 0px 0px;
     font-family: Helvetica, Tahoma, Arial, STXihei, 
         "华文细黑", "Microsoft YaHei", "微软雅黑", SimSun, "宋体", Heiti, "黑体", sans-serif;
+
+    height: 100%;
+    overflow: hidden;
 }
 
 @import 'normalize.css';
 
 #header {
+    display: none;
     .header-vars {
         .base-vars;
-        @border-color: lighten(@color4, 50%);
+        @border-color: lighten(@color4, 10%);
         @height: 48px;
     };
     .header-vars;
@@ -42,80 +35,60 @@ body {
     width: 100%;
     clear: both;
     position: fixed;
-    background: @color5;
+    background: rgba(0,0,0,0.3);
     z-index: 10;
 }
 
-.wrapper {
-    .wrapper-vars {
-        
-    };
-    .wrapper-vars;
-
-    overflow-x: hidden;
-}
-
-#main {
-    .main-vars {
+#nav-box {
+    .nav-box-vars {
         .base-vars;
+        @size: 32px;
     };
-    .main-vars;
+    .nav-box-vars;
 
-    position: relative;
-    top: 48px;
-    bottom: 32px;
+    display: inline-block;
+    width: 100%;
 
-    .main-left-box {
-        .main-left-box-vars {
-            @min-width: 128px;
-        };
-        .main-left-box-vars;
+    position: fixed;
+    background: rgba(red(@color4), green(@color4), blue(@color4), 0.9);
+    z-index: 1000;
 
-        float: left;
-        width: @min-width;
-
-        z-index: -1;
+    .nav {
+        padding: 0 32px;
+        width: 100%;
+        display: inline-block;
     }
 
-    // belong to left
-    .resize-bar {
-        .resize-bar-vars {
-            .main-left-box > .main-left-box-vars;
-            @left: @min-width;
-            @width: 3px;
-        };
-        .resize-bar-vars;
+    .nav-list {
+        height: @size;
+        line-height: @size;
+        width: 100%;
+    }
 
-        position: fixed;
-        top: 0;
-        left: @left - @width;
+    .nav-item {
+        height: @size;
+        line-height: @size;
+        min-width: @size;
 
-        width: @width;
-        min-height: 100%;
+        font-weight: bold;
+        color: @color2;
+        display: inline-block;
 
-        background: @color6;
-        cursor: col-resize;
+        i {
+            height: @size;
+            line-height: @size;
+            min-width: @size;
+            text-align: center;
 
-        z-index: 1;
-        -webkit-transition: background 0.3s;
-
-        &:hover {
-            background: @color2;
-            -webkit-transition: background 0.3s linear;
+            cursor: pointer;
         }
     }
 
-    .main-right-box {
-        .main-right-box-vars {
-            .main-left-box > .main-left-box-vars;
-            @left: @min-width;
-        };
-        .main-right-box-vars;
-
-        width: 100%;
-        position: relative;
-        margin-left: @left;
-        z-index: -1;
+    .small-text {
+        color: @color6;
+        font-size: 12px;
+        //position: absolute;
+        font-weight: 100;
     }
 }
 
@@ -140,9 +113,58 @@ body {
     z-index: 10;
 }
 
+.wrapper {
+    .wrapper-vars {
+        
+    };
+    .wrapper-vars;
+
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    .main-vars {
+        .base-vars;
+    };
+    .main-vars;
+
+    height: 100%;
+
+    .column-box {
+        position: relative;
+        display: inline-block;
+        min-width: 256px;
+        height: 100%;
+        margin-right: 6px;
+        background: @color5;
+        overflow: scroll;
+    }
+
+    .column {
+        width: 100%;
+        position: absolute;
+    }
+}
+
+#item-list-column-box {
+    .base-vars;
+
+    width: 100%;
+    left: 256px;
+    border-left: 1px solid @color6;
+    -webkit-transition: left 0.1s linear;
+
+    &:hover {
+        left: 32px;
+        -webkit-transition: left 0.1s linear;
+    }
+}
 #item-list-box {
     .item-list {
     }
+
+    width: 100%;
 
     .item {
         .item-vars {
@@ -155,20 +177,23 @@ body {
         line-height: @height - 1;
         padding: 0 8px;
 
-        border-top: 1px solid @color5;
+        border-top: 1px solid lighten(@color6, 20%);
         &:first-child {
             border-top: 0;
-        }
-        &:nth-child(even) {
-            background: darken(@color5, 1%);
         }
     }
 }
 
+#picture-list-column-box {
+    width: 256px;
+    position: absolute !important;
+}
 #picture-list-box {
     .picture-list {
-        
+        display: inline-block;
     }
+
+    display: inline-block;
 
     .item {
         .item-vars {
@@ -179,8 +204,6 @@ body {
 
         height: @size;
         width: @size;
-
-        display: inline-block;
 
         box-shadow: 0 0 1px @color6;
         cursor: pointer;
@@ -202,4 +225,3 @@ body {
         max-width: @size;
     }
 }
-
