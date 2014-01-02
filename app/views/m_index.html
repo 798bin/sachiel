@@ -15,11 +15,30 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+<style>
+#cam, #cap, #snap {
+    border: 1px solid #999;
+    clear: both;
+}
+
+#cap {
+}
+</style>
+
 </head>
 
 <body>
-<video id="video" autoplay=""></video>
-sachiel mobile
+cam
+<video id="cam" autoplay=""></video>
+
+shot
+<canvas id="cap" width="340" height="340"></canvas> 
+<img id="snap" src="" alt="">
+<hr />
+<button id="switch-cam">切换镜头</button>
+<button id="take-a-shot">拍摄</button>
+<button id="send">发送</button>
+
 </body>
 
 <script data-main="/static/script/m_main" src="/static/script/third_party/require.js"></script>
